@@ -1,0 +1,19 @@
+{
+  "name": "yash-prasad-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website for Yash Santosh Prasad - Mechatronics & Autonomous Systems Engineer",
+  "scripts": {
+    "start": "npx serve . -p 3000",
+    "dev": "npx serve . -p 3000"
+  },
+  "keywords": [
+    "portfolio",
+    "mechatronics",
+    "robotics",
+    "computer-vision",
+    "embedded-systems",
+    "autonomous-systems"
+  ],
+  "author": "Yash Santosh Prasad",
+  "license": "MIT"
+}
