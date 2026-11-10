@@ -1,0 +1,1190 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Yash Santosh Prasad | Mechatronics & Robotics Engineer Portfolio</title>
+  <meta name="description" content="Portfolio of Yash Santosh Prasad - Mechatronics Engineering specialist in Embedded Systems, Autonomous Robotics, Edge AI, and Industrial Automation. Holder of 2 Granted Design Patents, 2 Filed Utility Patents, and Published Research.">
+  <meta name="keywords" content="Yash Santosh Prasad, Mechatronics, Robotics, Embedded Systems, STM32MP1, Raspberry Pi 5, YOLOv8, Patents, Drone, Industry 4.0">
+  <meta name="author" content="Yash Santosh Prasad">
+
+  <!-- FOUC Prevention Script -->
+  <script>
+    try {
+      const savedScheme = localStorage.getItem("color-scheme");
+      if (savedScheme) {
+        document.querySelector('meta[name="color-scheme"]').content = savedScheme;
+      }
+    } catch (e) {
+      /* Fallback gracefully */
+    }
+  </script>
+
+  <!-- Google Fonts: Inter + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background Interactive Mesh Canvas -->
+  <canvas id="mesh-canvas" aria-hidden="true"></canvas>
+
+  <!-- Header & Navigation -->
+  <header class="site-header">
+    <div class="header-inner container">
+      <a href="#hero" class="brand-logo" aria-label="Yash Prasad Portfolio Home">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <span class="brand-name">Yash<span>Prasad</span></span>
+        <span class="brand-tag">Mechatronics</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#patents">Patents & Research</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#certifications">Honors</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons, Social Redirects & Theme Toggle -->
+      <div class="header-actions">
+        <!-- Direct Redirect Link: LinkedIn -->
+        <a href="http://www.linkedin.com/in/yash-santosh-prasad" target="_blank" rel="noopener noreferrer" class="header-icon-link" title="Visit Yash's LinkedIn Profile" aria-label="LinkedIn Profile">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+          </svg>
+        </a>
+
+        <!-- Direct Redirect Link: Google Scholar -->
+        <a href="https://scholar.google.com/citations?user=fC_KskgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="header-icon-link" title="Visit Yash's Google Scholar Profile" aria-label="Google Scholar Profile">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
+          </svg>
+        </a>
+
+        <!-- View Resume Button in Header -->
+        <button type="button" class="btn btn-outline btn-sm open-resume-modal" title="View Resume PDF">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          <span>Resume</span>
+        </button>
+
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle dark/light theme" title="Toggle theme">
+          <span class="theme-icon light-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </span>
+          <span class="theme-icon dark-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" class="mobile-menu-btn" type="button" aria-label="Open Navigation Menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+      <ul class="mobile-nav-links">
+        <li><a href="#about" class="mobile-link">About</a></li>
+        <li><a href="#patents" class="mobile-link">Patents & Research</a></li>
+        <li><a href="#projects" class="mobile-link">Projects</a></li>
+        <li><a href="#experience" class="mobile-link">Experience</a></li>
+        <li><a href="#skills" class="mobile-link">Skills</a></li>
+        <li><a href="#resume" class="mobile-link">Resume</a></li>
+        <li><a href="#certifications" class="mobile-link">Honors</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+      </ul>
+      <div class="mobile-drawer-socials">
+        <a href="http://www.linkedin.com/in/yash-santosh-prasad" target="_blank" rel="noopener noreferrer" class="social-chip">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://scholar.google.com/citations?user=fC_KskgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="social-chip">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+          <span>Google Scholar</span>
+        </a>
+      </div>
+      <div class="mobile-drawer-footer">
+        <button type="button" class="btn btn-outline btn-block open-resume-modal">View Resume PDF</button>
+        <a href="mailto:yashprasad2704@gmail.com" class="btn btn-primary btn-block">Email Yash</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <!-- Availability Pill -->
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            <span>Mechatronics Engineer &bull; Robotics &bull; Edge AI</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Yash Santosh Prasad</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Engineering intelligent machines at the convergence of <strong>Embedded Linux (STM32MP1)</strong>, 
+            <strong>Edge Computer Vision (YOLOv8)</strong>, <strong>Autonomous Drones</strong>, and <strong>Industry 4.0 Smart Manufacturing</strong>.
+          </p>
+
+          <div class="hero-meta-strip">
+            <span class="meta-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Pune, India
+            </span>
+            <span class="meta-divider">&bull;</span>
+            <span class="meta-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              B.Tech Mechatronics (CGPA: 8.29)
+            </span>
+            <span class="meta-divider">&bull;</span>
+            <span class="meta-item highlight">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              4 Patents (2 Granted) &bull; 1 Registered Copyright
+            </span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#patents" class="btn btn-primary">
+              <span>View Patents & Publications</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </a>
+            <button type="button" class="btn btn-outline open-resume-modal">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+              <span>View Resume</span>
+            </button>
+            <button id="copy-email-hero" class="btn btn-ghost" data-email="yashprasad2704@gmail.com" title="Click to copy email">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>yashprasad2704@gmail.com</span>
+            </button>
+          </div>
+
+          <div class="hero-social-links">
+            <a href="http://www.linkedin.com/in/yash-santosh-prasad" target="_blank" rel="noopener noreferrer" class="social-chip" title="LinkedIn Profile">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://scholar.google.com/citations?user=fC_KskgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="social-chip" title="Google Scholar Profile">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+              <span>Google Scholar</span>
+            </a>
+            <a href="tel:+917276377359" class="social-chip" title="Call Yash Santosh Prasad">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>+91 7276 377 359</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Stats Visual Board -->
+        <div class="hero-stats-panel">
+          <div class="stat-card">
+            <div class="stat-number" data-target="2">2</div>
+            <div class="stat-label">Granted Patents</div>
+            <div class="stat-sub">Official Indian Patent Office Designs</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="2">2</div>
+            <div class="stat-label">Utility Patents Filed</div>
+            <div class="stat-sub">Assistive Tech & Aerial Robotics</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="4">4</div>
+            <div class="stat-label">Industrial Internships</div>
+            <div class="stat-sub">Fiat Automobiles, iTech, EasyReach</div>
+            <div class="stat-exp-note">1 year exp.</div>
+          </div>
+          <div class="stat-card highlight-card">
+            <div class="stat-number">90<span class="unit">/100</span></div>
+            <div class="stat-label">e-Yantra IIT Bombay</div>
+            <div class="stat-sub">Embedded Systems & Robotics (eLSI)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About & Education Section -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Mechatronics Background</span>
+          <h2 class="section-title">Engineering Precision Hardware & Intelligent Software</h2>
+          <p class="section-desc">
+            Bridging mechanical kinematics, embedded electronics, and artificial intelligence into cohesive, production-grade autonomous systems.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card education-card">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            </div>
+            <div class="edu-header">
+              <span class="edu-date">Graduating July 2026</span>
+              <span class="edu-badge">Current CGPA: 8.29</span>
+            </div>
+            <h3 class="edu-degree">B. Tech in Mechatronics Engineering</h3>
+            <p class="edu-inst">Symbiosis Skills & Professional University (SSPU), Pune</p>
+            <p class="edu-text">
+              Specialized in robotics kinematics, embedded microcontrollers, automated control loops, computer vision perception, and industrial PLC/SCADA systems.
+            </p>
+            <div class="edu-highlights">
+              <span class="tag">Robotic Actuators</span>
+              <span class="tag">Edge AI</span>
+              <span class="tag">PLC Automation</span>
+              <span class="tag">Sensor Fusion</span>
+              <span class="tag">CAD Modeling</span>
+            </div>
+          </div>
+
+          <div class="about-card profile-highlights">
+            <h3 class="card-title">What I Bring to Engineering Teams</h3>
+            <ul class="highlight-list">
+              <li>
+                <div class="list-bullet"></div>
+                <div>
+                  <strong>End-to-End System Prototyping:</strong> Proven track record from conceptual mathematical modeling and CATIA/KiCAD design to microkernel Linux firmware and real-world testing.
+                </div>
+              </li>
+              <li>
+                <div class="list-bullet"></div>
+                <div>
+                  <strong>Patent-Backed Innovation:</strong> 4 filed/granted patents and a registered copyright, delivering novel solutions in aerial payloads and assistive navigational devices.
+                </div>
+              </li>
+              <li>
+                <div class="list-bullet"></div>
+                <div>
+                  <strong>Tier-1 Automotive Experience:</strong> Built Safety LOTO vision camera protocols and Industry 4.0 Poka-Yoke error-proofing on live robotic welding cells at Fiat Automobiles.
+                </div>
+              </li>
+              <li>
+                <div class="list-bullet"></div>
+                <div>
+                  <strong>Edge AI & Microprocessing:</strong> Deployed optimized neural networks (YOLOv8 + ByteTrack) on resource-constrained compute (Raspberry Pi 5, STM32MP1 MPU).
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Patents & Research Publications Section -->
+    <section id="patents" class="section patents-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Intellectual Property & Scholar Output</span>
+          <h2 class="section-title">Patents & Research Publications</h2>
+          <p class="section-desc">
+            A portfolio of novel engineering solutions recognized through granted industrial design patents, filed utility patents, registered software copyrights, and peer-reviewed international publications.
+          </p>
+        </div>
+
+        <!-- Filter Tabs for IP -->
+        <div class="ip-filter-container">
+          <button class="filter-btn active" data-filter="all">All IP & Papers (7)</button>
+          <button class="filter-btn" data-filter="granted">Granted Patents (2)</button>
+          <button class="filter-btn" data-filter="utility">Utility Patents (2)</button>
+          <button class="filter-btn" data-filter="publications">Papers & Chapters (2)</button>
+          <button class="filter-btn" data-filter="copyright">Copyright (1)</button>
+        </div>
+
+        <div class="patents-grid">
+          <!-- Item 1: Design Patent Granted (Navigational Support) -->
+          <article class="ip-card" data-category="granted">
+            <div class="ip-badge-wrap">
+              <span class="status-badge status-granted">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Granted Design Patent
+              </span>
+              <span class="reg-number">Design No. 436426-001</span>
+            </div>
+            <h3 class="ip-title">Integrated Communication Enabled Navigational Support Device</h3>
+            <p class="ip-desc">
+              Novel ergonomic physical design and sensory form factor for a smart assistive mobility device integrating haptic feedback modules, sensor casing, and hands-free tactile emergency actuators.
+            </p>
+            <div class="ip-footer">
+              <span class="ip-field"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg> Granted &bull; Indian Patent Office</span>
+              <button class="copy-reg-btn" data-copy="436426-001" title="Copy Design Number">Copy ID</button>
+            </div>
+          </article>
+
+          <!-- Item 2: Design Patent Granted (Drone Aerial System) -->
+          <article class="ip-card" data-category="granted">
+            <div class="ip-badge-wrap">
+              <span class="status-badge status-granted">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Granted Design Patent
+              </span>
+              <span class="reg-number">Design No. 501462-001</span>
+            </div>
+            <h3 class="ip-title">Autonomous Modular Multi-Payload Aerial System</h3>
+            <p class="ip-desc">
+              Aerodynamic structural architecture and rapid quick-swap payload docking frame enabling seamless interchangeability between agricultural spraying tanks, surveillance gimbals, and cargo bays.
+            </p>
+            <div class="ip-footer">
+              <span class="ip-field"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg> Granted &bull; Indian Patent Office</span>
+              <button class="copy-reg-btn" data-copy="501462-001" title="Copy Design Number">Copy ID</button>
+            </div>
+          </article>
+
+          <!-- Item 3: Utility Patent Filed (Mobility Aid) -->
+          <article class="ip-card" data-category="utility">
+            <div class="ip-badge-wrap">
+              <span class="status-badge status-filed">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Utility Patent Filed
+              </span>
+              <span class="reg-number">App No. 202421073593</span>
+            </div>
+            <h3 class="ip-title">Mobility Aid with Advanced Navigation & Emergency Response</h3>
+            <p class="ip-desc">
+              Comprehensive invention covering multi-sensor fusion algorithms (ultrasonic + optical flow), automated real-time obstacle hazard warnings, low-latency fall detection, and automatic cellular SOS broadcast.
+            </p>
+            <div class="ip-footer">
+              <span class="ip-field"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path></svg> Utility Patent Application</span>
+              <button class="copy-reg-btn" data-copy="202421073593" title="Copy Application Number">Copy ID</button>
+            </div>
+          </article>
+
+          <!-- Item 4: Utility Patent Filed (Modular Drone) -->
+          <article class="ip-card" data-category="utility">
+            <div class="ip-badge-wrap">
+              <span class="status-badge status-filed">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Utility Patent Filed
+              </span>
+              <span class="reg-number">App No. 202621059159</span>
+            </div>
+            <h3 class="ip-title">Autonomous Modular Multi-Payload Aerial System (Functional Invention)</h3>
+            <p class="ip-desc">
+              Novel electromechanical mechanism and control methodology for dynamic payload mass balancing, auto-detecting attached modules via hardware telemetry, and fail-safe flight trajectory correction.
+            </p>
+            <div class="ip-footer">
+              <span class="ip-field"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path></svg> Utility Patent Application</span>
+              <button class="copy-reg-btn" data-copy="202621059159" title="Copy Application Number">Copy ID</button>
+            </div>
+          </article>
+
+          <!-- Item 5: Copyright Registered -->
+          <article class="ip-card" data-category="copyright">
+            <div class="ip-badge-wrap">
+              <span class="status-badge status-copyright">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M15 9.354a4 4 0 1 0 0 5.292"></path></svg>
+                Registered Copyright
+              </span>
+              <span class="reg-number">Reg No. LD-20250169851</span>
+            </div>
+            <h3 class="ip-title">Smart Mobility Aid With AI-Powered Navigation (Software)</h3>
+            <p class="ip-desc">
+              Registered algorithmic software codebase implementing sub-second latency obstacle classification, sensor arbitration state machines, and synchronized tactile/audio guidance sequences.
+            </p>
+            <div class="ip-footer">
+              <span class="ip-field"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg> Government of India Copyright Office</span>
+              <button class="copy-reg-btn" data-copy="LD-20250169851" title="Copy Copyright Number">Copy ID</button>
+            </div>
+          </article>
+
+          <!-- Item 6: Springer Conference Paper -->
+          <article class="ip-card" data-category="publications">
+            <div class="ip-badge-wrap">
+              <span class="status-badge status-publication">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                Springer Research Paper
+              </span>
+              <span class="reg-number">CVR 2026 &bull; NIT Goa</span>
+            </div>
+            <h3 class="ip-title">Autonomous Modular Multi-Payload Aerial System</h3>
+            <p class="ip-desc">
+              Peer-reviewed oral presentation and publication at the 6th International Conference on Computer Vision and Robotics (CVR 2026), National Institute of Technology (NIT) Goa. Published in Springer proceedings.
+            </p>
+            <div class="ip-footer">
+              <span class="ip-field"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> Oral Presentation Award</span>
+              <a href="https://scholar.google.com/citations?user=fC_KskgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="link-btn">Scholar Profile &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Item 7: Book Chapter -->
+          <article class="ip-card" data-category="publications">
+            <div class="ip-badge-wrap">
+              <span class="status-badge status-publication">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                Published Book Chapter
+              </span>
+              <span class="reg-number">Advances in Thermal Systems</span>
+            </div>
+            <h3 class="ip-title">Robotics Integration in Logistics through AS/RS</h3>
+            <p class="ip-desc">
+              Authored book chapter detailing automated storage and retrieval systems (AS/RS), robotics kinematic throughput optimization, energy efficiency in automated warehouse logistics, and sensor telemetry.
+            </p>
+            <div class="ip-footer">
+              <span class="ip-field"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> Book Chapter Publication</span>
+              <a href="https://scholar.google.com/citations?user=fC_KskgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="link-btn">Scholar Reference &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engineering Projects Section -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Hands-on Engineering</span>
+          <h2 class="section-title">Featured Robotics & Embedded Systems</h2>
+          <p class="section-desc">
+            Deep-dive into full-stack mechatronic builds: combining edge artificial intelligence, custom Linux networking firmware, and multi-sensor spatial navigation.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Aero Mind -->
+          <article class="project-card">
+            <div class="project-header">
+              <div class="project-type-chip">Autonomous UAV &bull; Edge AI</div>
+              <span class="project-date">Aug ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ Dec 2025</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Aero Mind ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ AI Multipurpose Drone</h3>
+              <p class="project-summary">
+                Engineered an edge-AI perception and aerial navigation pipeline combining YOLOv8 and Byte Track on an onboard Raspberry Pi 5, delivering real-time multi-object detection and autonomous trajectory decisions.
+              </p>
+              
+              <div class="project-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Perception</span>
+                  <span class="spec-value">YOLOv8 + Byte Track</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Compute</span>
+                  <span class="spec-value">Raspberry Pi 5 (Onboard)</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Navigation</span>
+                  <span class="spec-value">Autonomous GPS Waypoints</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Safety</span>
+                  <span class="spec-value">Lidar Air Obstacle Avoidance</span>
+                </div>
+              </div>
+
+              <div class="project-details">
+                <h4>Key Engineering Achievements:</h4>
+                <ul>
+                  <li>Deployed an edge-AI perception pipeline combining YOLOv8 object detection with ByteTrack multi-object tracker directly on a Raspberry Pi 5 with low inference latency.</li>
+                  <li>Integrated autonomous GPS waypoint navigation with fail-safe return-to-home (RTH) protocols for hands-off field operations and continuous Lidar-based aerial collision avoidance.</li>
+                  <li>Designed and 3D modeled a proprietary quick-swap modular payload mechanism supporting 3 mission configurations: precision agricultural spraying, surveillance, and light parcel logistics.</li>
+                </ul>
+              </div>
+
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">YOLOv8</span>
+                <span class="tag">Byte Track</span>
+                <span class="tag">Raspberry Pi 5</span>
+                <span class="tag">GPS Navigation</span>
+                <span class="tag">Lidar</span>
+                <span class="tag">Modular Payload</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="ip-link-badge">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                Patent: Design No. 501462-001 &bull; Springer CVR 2026 Paper
+              </span>
+            </div>
+          </article>
+
+          <!-- Project 2: STM32MP1 Industrial Robot Communication -->
+          <article class="project-card">
+            <div class="project-header">
+              <div class="project-type-chip">Embedded Linux &bull; Industrial Bridge</div>
+              <span class="project-date">June ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ Sep 2025</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">STM32MP1 Industrial Robot Communication System</h3>
+              <p class="project-summary">
+                Architected a low-latency USB-over-IP communication bridge on the dual-core STM32MP1 MPU, enabling remote PC workstations and mobile edge clients to command industrial robotic actuators across local Ethernet networks.
+              </p>
+
+              <div class="project-specs">
+                <div class="spec-item">
+                  <span class="spec-label">MPU Hardware</span>
+                  <span class="spec-value">Dual-Core STM32MP1</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">OS & Kernel</span>
+                  <span class="spec-value">Embedded Linux (Yocto/Buildroot)</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Networking</span>
+                  <span class="spec-value">USB-over-IP & TCP/IP Sockets</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Reliability</span>
+                  <span class="spec-value">FSM Auto-Recovery & Failover</span>
+                </div>
+              </div>
+
+              <div class="project-details">
+                <h4>Key Engineering Achievements:</h4>
+                <ul>
+                  <li>Eliminated dedicated proprietary cabling by creating a high-throughput, low-latency USB-over-IP daemon bridging microcontrollers to network endpoints.</li>
+                  <li>Automated sequential network pairing routines by engineering a finite-state machine (FSM) to initialize, authenticate, and monitor network interfaces in strict deterministic order.</li>
+                  <li>Engineered robust auto-recovery and failover logic, ensuring zero-touch reconnection and zero packet stall during harsh industrial plant network dropouts.</li>
+                </ul>
+              </div>
+
+              <div class="project-tags">
+                <span class="tag">Embedded Linux</span>
+                <span class="tag">STM32MP1</span>
+                <span class="tag">Bash</span>
+                <span class="tag">USB-IP</span>
+                <span class="tag">TCP/IP</span>
+                <span class="tag">FSM Architecture</span>
+                <span class="tag">Actuator Control</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="ip-link-badge">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Production Proven at iTech Robotics R&D
+              </span>
+            </div>
+          </article>
+
+          <!-- Project 3: Smart Assistive Device -->
+          <article class="project-card">
+            <div class="project-header">
+              <div class="project-type-chip">Assistive Hardware &bull; Computer Vision</div>
+              <span class="project-date">Nov 2023 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ Apr 2024</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Smart Assistive Device for Visually Impaired</h3>
+              <p class="project-summary">
+                Designed and manufactured a wearable IoT mobility aid combining multi-sensor fusion, computer vision obstacle recognition, live GPS geolocation tracking, and instant automated cellular emergency SOS alerts.
+              </p>
+
+              <div class="project-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Perception</span>
+                  <span class="spec-value">Computer Vision + Ultrasonic</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Feedback</span>
+                  <span class="spec-value">Haptic Vibrational + Audio</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Emergency</span>
+                  <span class="spec-value">Live GPS + Automated SOS</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Reaction</span>
+                  <span class="spec-value">Sub-second Latency Alert</span>
+                </div>
+              </div>
+
+              <div class="project-details">
+                <h4>Key Engineering Achievements:</h4>
+                <ul>
+                  <li>Integrated real-time optical obstacle recognition with ultrasonic range-finding to identify overhead and ground hazards in cluttered indoor/outdoor environments.</li>
+                  <li>Synthesized intuitive multi-frequency haptic vibrations and synthesized audio cues, delivering spatial direction guidance with sub-second reaction speeds.</li>
+                  <li>Directly produced 1 Granted Design Patent (436426-001), 1 Filed Utility Patent (202421073593), and 1 Registered Software Copyright (LD-20250169851).</li>
+                </ul>
+              </div>
+
+              <div class="project-tags">
+                <span class="tag">Embedded Systems</span>
+                <span class="tag">Computer Vision</span>
+                <span class="tag">Multi-Sensor Fusion</span>
+                <span class="tag">IoT</span>
+                <span class="tag">GPS Telemetry</span>
+                <span class="tag">Haptic Feedback</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <span class="ip-link-badge">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                Patent Granted &bull; Utility Patent Filed &bull; Copyright Reg.
+              </span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Experience Timeline -->
+    <section id="experience" class="section experience-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Industrial Track Record</span>
+          <h2 class="section-title">Internship & Industry Experience</h2>
+          <p class="section-desc">
+            Hands-on shopfloor and R&D engineering across tier-1 automotive manufacturing, industrial robotics, IoT clouds, and precision machine recalibration.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <!-- Experience 1: Fiat Automobiles -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-meta">
+                <span class="company-name">Fiat Automobiles India Pvt. Ltd.</span>
+                <span class="location">Pune, India</span>
+                <span class="role-badge">Jan 2026 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ Jul 2026</span>
+              </div>
+              <h3 class="role-title">Project Intern ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ Body Shop & Smart Manufacturing</h3>
+              <ul class="timeline-bullets">
+                <li>
+                  <strong>Automated Safety LOTO Integration:</strong> Engineered a fail-safe Lockout/Tagout (LOTO) security interlock using RFID operator authentication and visual analytics cameras around high-voltage robotic welding cells, enforcing strict zero-hazard safety compliance.
+                </li>
+                <li>
+                  <strong>Industry 4.0 & Poka-Yoke:</strong> Implemented shopfloor IoT data telemetry and physical Poka-Yoke (error-proofing) sensory mechanisms across the high-throughput automotive body shop line, directly cutting assembly defects and line downtime.
+                </li>
+              </ul>
+              <div class="timeline-tech">
+                <span class="tag">Automotive Body Shop</span>
+                <span class="tag">Robotic Welding Cells</span>
+                <span class="tag">RFID LOTO</span>
+                <span class="tag">Vision Analytics</span>
+                <span class="tag">Poka-Yoke</span>
+                <span class="tag">Industry 4.0</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience 2: iTech Robotics -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-meta">
+                <span class="company-name">iTech Robotics & Automation Pvt. Ltd.</span>
+                <span class="location">Pune, India</span>
+                <span class="role-badge">Jun 2025 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ Jul 2025</span>
+              </div>
+              <h3 class="role-title">R&D Intern</h3>
+              <ul class="timeline-bullets">
+                <li>
+                  <strong>Embedded MPU Optimization:</strong> Optimized embedded Linux firmware routines on the dual-core STM32MP1 processor, profiling memory allocation and inter-process thread synchronization.
+                </li>
+                <li>
+                  <strong>Heavy-Payload UAV Prototyping:</strong> Assembled and calibrated a modular quadcopter platform engineered for heavy payloads up to 3 kg, conducting flight-dynamics stress analysis.
+                </li>
+                <li>
+                  <strong>Technical Leadership:</strong> Conducted an intensive 3-day technical workshop on Autonomous Drone Systems for engineering students at MIT-WPU College.
+                </li>
+              </ul>
+              <div class="timeline-tech">
+                <span class="tag">STM32MP1</span>
+                <span class="tag">Firmware Optimization</span>
+                <span class="tag">UAV Payload (3kg)</span>
+                <span class="tag">Flight Tuning</span>
+                <span class="tag">Workshop Lead</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience 3: EasyReach Solutions -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-meta">
+                <span class="company-name">EasyReach Solutions Pvt. Ltd.</span>
+                <span class="location">Pune, India</span>
+                <span class="role-badge">Jun 2024 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ Jul 2024</span>
+              </div>
+              <h3 class="role-title">IoT Intern</h3>
+              <ul class="timeline-bullets">
+                <li>
+                  <strong>Device-to-Cloud IoT Pipelines:</strong> Engineered telemetry pipelines bridging edge microcontroller sensor nodes with cloud servers via MQTT protocol and REST APIs, maintaining zero packet loss under unstable connectivity.
+                </li>
+                <li>
+                  <strong>Real-Time Monitoring Telemetry:</strong> Built interactive live dashboards visualizing sensor health metrics, vibration frequencies, and current draw for predictive plant maintenance.
+                </li>
+              </ul>
+              <div class="timeline-tech">
+                <span class="tag">MQTT</span>
+                <span class="tag">REST APIs</span>
+                <span class="tag">Sensor Nodes</span>
+                <span class="tag">Cloud Telemetry</span>
+                <span class="tag">Predictive Maintenance</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience 4: Maheshwari International -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-meta">
+                <span class="company-name">Maheshwari International</span>
+                <span class="location">Pune, India</span>
+                <span class="role-badge">Jun 2023 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ Jul 2023</span>
+              </div>
+              <h3 class="role-title">Mechatronics Engineer Intern</h3>
+              <ul class="timeline-bullets">
+                <li>
+                  <strong>Industrial CNC & VMC Overhaul:</strong> Reconditioned and calibrated multi-axis CNC and Vertical Machining Centers (VMC), executing precision geometric alignment and kinematic overhaul.
+                </li>
+                <li>
+                  <strong>15% Machine Uptime Improvement:</strong> Formulated systematic preventive maintenance checklists and diagnostic flowcharts, slashing recurring breakdown incidents and improving operational machine uptime by 15%.
+                </li>
+              </ul>
+              <div class="timeline-tech">
+                <span class="tag">CNC & VMC</span>
+                <span class="tag">Axis Alignment</span>
+                <span class="tag">Preventive Maintenance</span>
+                <span class="tag">+15% Uptime</span>
+                <span class="tag">Mechanical Overhaul</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills Matrix -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Core Competencies</span>
+          <h2 class="section-title">Technical Skills Matrix</h2>
+          <p class="section-desc">
+            A comprehensive toolbox spanning low-level bare-metal firmware, PLC industrial automation, computer vision, and mechanical CAD modeling.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Category 1: Languages & Firmware (Updated per request) -->
+          <div class="skill-category-card">
+            <div class="skill-category-header">
+              <div class="cat-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <h3>Languages & Firmware</h3>
+            </div>
+            <ul class="skill-pills">
+              <li><span class="pill-title">Python</span> <span class="pill-lvl">Intermediate</span></li>
+              <li><span class="pill-title">Embedded C / C++</span> <span class="pill-lvl">Intermediate</span></li>
+              <li><span class="pill-title">Bash Shell Scripting</span> <span class="pill-lvl">Proficient</span></li>
+              <li><span class="pill-title">Ladder Logic</span> <span class="pill-lvl">Proficient</span></li>
+            </ul>
+          </div>
+
+          <!-- Category 2: Industrial Automation (Updated per request) -->
+          <div class="skill-category-card">
+            <div class="skill-category-header">
+              <div class="cat-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              </div>
+              <h3>Industrial Automation & Controls</h3>
+            </div>
+            <ul class="skill-pills">
+              <li><span class="pill-title">PLC (Siemens S7 & Allen-Bradley)</span> <span class="pill-lvl">Hardware</span></li>
+              <li><span class="pill-title">HMI & SCADA Interface</span> <span class="pill-lvl">Intermediate</span></li>
+              <li><span class="pill-title">Ethernet / IP & Modbus</span> <span class="pill-lvl">Industrial Bus</span></li>
+              <li><span class="pill-title">Industrial Sensors & Interlocks</span> <span class="pill-lvl">Applied</span></li>
+              <li><span class="pill-title">LOTO & Poka-Yoke Implementation</span> <span class="pill-lvl">Safety Standards</span></li>
+            </ul>
+          </div>
+
+          <!-- Category 3: Embedded Systems & IoT -->
+          <div class="skill-category-card">
+            <div class="skill-category-header">
+              <div class="cat-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+              </div>
+              <h3>Embedded Systems & IoT</h3>
+            </div>
+            <ul class="skill-pills">
+              <li><span class="pill-title">STM32 Microprocessors (STM32MP1)</span> <span class="pill-lvl">Dual-Core</span></li>
+              <li><span class="pill-title">Raspberry Pi 5 Single Board</span> <span class="pill-lvl">Edge Linux</span></li>
+              <li><span class="pill-title">Arduino & Microcontrollers</span> <span class="pill-lvl">Embedded</span></li>
+              <li><span class="pill-title">MQTT & HTTP REST APIs</span> <span class="pill-lvl">IoT Protocols</span></li>
+              <li><span class="pill-title">Multi-Sensor Fusion</span> <span class="pill-lvl">Lidar/IMU/Sonar</span></li>
+            </ul>
+          </div>
+
+          <!-- Category 4: Simulation, AI & CAD Tools -->
+          <div class="skill-category-card">
+            <div class="skill-category-header">
+              <div class="cat-icon">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+              </div>
+              <h3>Simulation, AI & CAD</h3>
+            </div>
+            <ul class="skill-pills">
+              <li><span class="pill-title">YOLOv8 & OpenCV</span> <span class="pill-lvl">Computer Vision</span></li>
+              <li><span class="pill-title">KiCAD EDA</span> <span class="pill-lvl">Schematic/PCB</span></li>
+              <li><span class="pill-title">ANSYS Multiphysics</span> <span class="pill-lvl">FEA/CFD</span></li>
+              <li><span class="pill-title">CATIA V5</span> <span class="pill-lvl">3D CAD Modeling</span></li>
+              <li><span class="pill-title">MATLAB & Simulink</span> <span class="pill-lvl">Modeling</span></li>
+              <li><span class="pill-title">NumPy, Pandas & Matplotlib</span> <span class="pill-lvl">Data Analytics</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dedicated Resume Section -->
+    <section id="resume" class="section resume-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Curriculum Vitae</span>
+          <h2 class="section-title">Official Resume & Credentials</h2>
+          <p class="section-desc">
+            Directly review or download the complete engineering resume covering mechatronics, patents, publications, and professional background.
+          </p>
+        </div>
+
+        <div class="resume-card-box">
+          <div class="resume-header-bar">
+            <div class="resume-doc-info">
+              <div class="pdf-icon">PDF</div>
+              <div>
+                <h3 class="resume-doc-title">Yash_Santosh_Prasad_Resume.pdf</h3>
+                <span class="resume-doc-meta">Mechatronics Engineering &bull; Updated 2026</span>
+              </div>
+            </div>
+            <div class="resume-actions-group">
+              <a href="Yash_Prasad_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" title="Open full screen in new tab">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+                <span>Full Screen View</span>
+              </a>
+              <a href="Yash_Prasad_Resume.pdf" download="Yash_Santosh_Prasad_Resume.pdf" class="btn btn-primary btn-sm">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span>Download PDF</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Embedded PDF Viewer Box -->
+          <div class="embedded-pdf-wrapper">
+            <object data="Yash_Prasad_Resume.pdf" type="application/pdf" class="embedded-pdf-iframe" aria-label="Yash Santosh Prasad Resume PDF">
+              <div class="pdf-fallback">
+                <p>Your browser does not support inline PDFs.</p>
+                <a href="Yash_Prasad_Resume.pdf" target="_blank" class="btn btn-primary">Open PDF in New Tab</a>
+              </div>
+            </object>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications & Leadership Section -->
+    <section id="certifications" class="section cert-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Recognition & Leadership</span>
+          <h2 class="section-title">Certifications & Leadership</h2>
+          <p class="section-desc">
+            Competitive national engineering qualifications, research podium presentations, and technical mentorship roles.
+          </p>
+        </div>
+
+        <div class="cert-grid">
+          <!-- Card 1: e-Yantra -->
+          <div class="cert-card">
+            <div class="cert-icon-badge">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            </div>
+            <div class="cert-content">
+              <div class="cert-badge-row">
+                <span class="score-badge">Scored 90 / 100</span>
+                <span class="cert-org">IIT Bombay</span>
+              </div>
+              <h3 class="cert-name">e-Yantra (IIT Bombay / eLSI)</h3>
+              <p class="cert-desc">
+                Completed rigorous national assessment in <strong>Embedded Systems and Robotics</strong>, scoring 90/100 in the comprehensive final technical examination.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2: Paper Presenter -->
+          <div class="cert-card">
+            <div class="cert-icon-badge">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <div class="cert-content">
+              <div class="cert-badge-row">
+                <span class="score-badge">Oral Presenter</span>
+                <span class="cert-org">CVR 2026 &bull; NIT Goa</span>
+              </div>
+              <h3 class="cert-name">Paper Presenter Award (NIT Goa)</h3>
+              <p class="cert-desc">
+                Awarded Certificate of Presentation for oral delivery of peer-reviewed robotics research at the <strong>6th International Conference on Computer Vision and Robotics</strong>.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3: Drone Workshop Lead -->
+          <div class="cert-card">
+            <div class="cert-icon-badge">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <div class="cert-content">
+              <div class="cert-badge-row">
+                <span class="score-badge">Resource Person</span>
+                <span class="cert-org">SSPU</span>
+              </div>
+              <h3 class="cert-name">Workshop Lead & Resource Person</h3>
+              <p class="cert-desc">
+                Led university-wide <strong>Drone Technology Workshop</strong> at Symbiosis Skills & Professional University ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â mentored engineering candidates on UAV flight controllers, hardware calibration, and avionics.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4: Workshop Organizer -->
+          <div class="cert-card">
+            <div class="cert-icon-badge">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            </div>
+            <div class="cert-content">
+              <div class="cert-badge-row">
+                <span class="score-badge">Event Lead</span>
+                <span class="cert-org">SSPU</span>
+              </div>
+              <h3 class="cert-name">Workshop Organizer: Robotics in a Day</h3>
+              <p class="cert-desc">
+                Orchestrated the <strong>"Robotics in a Day: From Concept to Creation"</strong> hands-on boot camp, managing project component logistics and direct mentorship for student robotic platforms.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Collaboration Section -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="contact-card-box">
+          <div class="contact-header">
+            <span class="section-tag">Let's Connect</span>
+            <h2 class="section-title">Ready to Build the Future of Robotics</h2>
+            <p class="section-desc">
+              Whether you are looking for an innovative Mechatronics Engineer, seeking collaboration on autonomous aerial platforms, or discussing IP licensing, my inbox is always open.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <!-- Direct Info Column -->
+            <div class="contact-info-column">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div class="contact-item-text">
+                  <span class="label">Email Address</span>
+                  <a href="mailto:yashprasad2704@gmail.com" class="val link">yashprasad2704@gmail.com</a>
+                </div>
+                <button class="copy-field-btn" data-copy="yashprasad2704@gmail.com" title="Copy Email">Copy</button>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
+                <div class="contact-item-text">
+                  <span class="label">Direct Phone</span>
+                  <a href="tel:+917276377359" class="val link">+91 7276 377 359</a>
+                </div>
+                <button class="copy-field-btn" data-copy="+917276377359" title="Copy Phone">Copy</button>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div class="contact-item-text">
+                  <span class="label">Location</span>
+                  <span class="val">Pune, Maharashtra, India</span>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                </div>
+                <div class="contact-item-text">
+                  <span class="label">LinkedIn</span>
+                  <a href="http://www.linkedin.com/in/yash-santosh-prasad" target="_blank" rel="noopener noreferrer" class="val link">linkedin.com/in/yash-santosh-prasad</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+                </div>
+                <div class="contact-item-text">
+                  <span class="label">Google Scholar</span>
+                  <a href="https://scholar.google.com/citations?user=fC_KskgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="val link">scholar.google.com (Citations)</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Inquiry Form -->
+            <div class="contact-form-column">
+              <form id="contact-form" class="interactive-form">
+                <div class="form-group">
+                  <label for="sender-name">Your Name</label>
+                  <input type="text" id="sender-name" name="name" required placeholder="e.g. Dr. Rajesh Sharma">
+                </div>
+                <div class="form-group">
+                  <label for="sender-email">Your Email Address</label>
+                  <input type="email" id="sender-email" name="email" required placeholder="name@company.com">
+                </div>
+                <div class="form-group">
+                  <label for="message-subject">Subject / Inquiry Type</label>
+                  <input type="text" id="message-subject" name="subject" placeholder="Robotics Role / Drone Collaboration / Patent Inquiry">
+                </div>
+                <div class="form-group">
+                  <label for="message-body">Message</label>
+                  <textarea id="message-body" name="message" rows="4" required placeholder="Tell Yash about the project, opportunity, or collaboration..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                  <span>Send Message via Email Client</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Interactive Resume Modal Dialog (Native HTML5 <dialog> with Light-Dismiss) -->
+  <dialog id="resume-modal" class="resume-dialog" closedby="any" aria-labelledby="resume-dialog-title">
+    <div class="dialog-header">
+      <div class="dialog-title-group">
+        <h2 id="resume-dialog-title" class="dialog-title">Yash Santosh Prasad &mdash; Resume</h2>
+        <span class="dialog-subtitle">Mechatronics Engineering &bull; Official Curriculum Vitae</span>
+      </div>
+      <div class="dialog-header-actions">
+        <a href="Yash_Prasad_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" title="Open in new window">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          <span>Open Full</span>
+        </a>
+        <a href="Yash_Prasad_Resume.pdf" download="Yash_Santosh_Prasad_Resume.pdf" class="btn btn-primary btn-sm" title="Download Resume PDF">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>Download</span>
+        </a>
+        <form method="dialog">
+          <button type="submit" class="dialog-close-btn" aria-label="Close Resume Modal" title="Close">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="dialog-body">
+      <object data="Yash_Prasad_Resume.pdf" type="application/pdf" class="dialog-pdf-iframe" aria-label="Resume PDF">
+        <div class="pdf-fallback" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:2rem;">
+          <p style="color:var(--c-text-secondary)">Your browser cannot display the PDF inline.</p>
+          <a href="Yash_Prasad_Resume.pdf" target="_blank" class="btn btn-primary">Open PDF in New Tab</a>
+        </div>
+      </object>
+    </div>
+  </dialog>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-col">
+        <div class="brand-logo footer-logo">
+          <span class="brand-name">Yash<span>Prasad</span></span>
+        </div>
+        <p class="footer-tagline">
+          Mechatronics Engineer | Embedded Systems, Aerial Robotics & Industry 4.0
+        </p>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#patents">Patents</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#certifications">Honors</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Profiles & Contact</h4>
+        <ul>
+          <li><a href="http://www.linkedin.com/in/yash-santosh-prasad" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></li>
+          <li><a href="https://scholar.google.com/citations?user=fC_KskgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+          <li><a href="mailto:yashprasad2704@gmail.com">Direct Email</a></li>
+          <li><a href="tel:+917276377359">+91 7276 377 359</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 Yash Santosh Prasad. All intellectual property, designs & patents protected under respective registry bodies.</p>
+        <button id="scroll-top-btn" class="scroll-top-btn" title="Back to top" aria-label="Back to top">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
