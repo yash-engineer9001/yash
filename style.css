@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    YASH SANTOSH PRASAD - PORTFOLIO DESIGN SYSTEM
    Mechatronics & Robotics Engineering Portfolio
    ========================================================================== */
@@ -7,81 +7,33 @@
    1. Root Variables & Modern Web Color System
    -------------------------------------------------------------------------- */
 :root {
-  /* Supported schemes */
-  color-scheme: light dark;
-
-  /* Theme sync with <meta name="color-scheme"> */
-  &:has(> head > meta[name="color-scheme"][content="dark"]) {
-    color-scheme: dark;
-  }
-  &:has(> head > meta[name="color-scheme"][content="light"]) {
-    color-scheme: light;
-  }
+  /* Permanent Dark Theme */
+  color-scheme: dark;
 
   /* Color Palette Tokens */
-  --c-brand-light: #0284c7;
-  --c-brand-dark: #38bdf8;
-  --c-brand: light-dark(var(--c-brand-light), var(--c-brand-dark));
-
-  --c-brand-hover-light: #0369a1;
-  --c-brand-hover-dark: #7dd3fc;
-  --c-brand-hover: light-dark(var(--c-brand-hover-light), var(--c-brand-hover-dark));
-
-  --c-accent-light: #d97706;
-  --c-accent-dark: #fbbf24;
-  --c-accent: light-dark(var(--c-accent-light), var(--c-accent-dark));
+  --c-brand: #38bdf8;
+  --c-brand-hover: #7dd3fc;
+  --c-accent: #fbbf24;
 
   /* Surface and Backgrounds */
-  --c-bg-light: #f8fafc;
-  --c-bg-dark: #0a0e17;
-  --c-bg: light-dark(var(--c-bg-light), var(--c-bg-dark));
-
-  --c-surface-light: #ffffff;
-  --c-surface-dark: #111827;
-  --c-surface: light-dark(var(--c-surface-light), var(--c-surface-dark));
-
-  --c-surface-hover-light: #f1f5f9;
-  --c-surface-hover-dark: #1e293b;
-  --c-surface-hover: light-dark(var(--c-surface-hover-light), var(--c-surface-hover-dark));
-
-  --c-card-light: #ffffff;
-  --c-card-dark: rgba(17, 24, 39, 0.75);
-  --c-card: light-dark(var(--c-card-light), var(--c-card-dark));
+  --c-bg: #0a0e17;
+  --c-surface: #111827;
+  --c-surface-hover: #1e293b;
+  --c-card: rgba(17, 24, 39, 0.75);
 
   /* Text & Typography */
-  --c-text-primary-light: #0f172a;
-  --c-text-primary-dark: #f8fafc;
-  --c-text-primary: light-dark(var(--c-text-primary-light), var(--c-text-primary-dark));
-
-  --c-text-secondary-light: #475569;
-  --c-text-secondary-dark: #94a3b8;
-  --c-text-secondary: light-dark(var(--c-text-secondary-light), var(--c-text-secondary-dark));
-
-  --c-text-muted-light: #64748b;
-  --c-text-muted-dark: #64748b;
-  --c-text-muted: light-dark(var(--c-text-muted-light), var(--c-text-muted-dark));
+  --c-text-primary: #f8fafc;
+  --c-text-secondary: #94a3b8;
+  --c-text-muted: #64748b;
 
   /* Borders & Dividers */
-  --c-border-light: #e2e8f0;
-  --c-border-dark: #1e293b;
-  --c-border: light-dark(var(--c-border-light), var(--c-border-dark));
-
-  --c-border-subtle-light: #f1f5f9;
-  --c-border-subtle-dark: #273549;
-  --c-border-subtle: light-dark(var(--c-border-subtle-light), var(--c-border-subtle-dark));
+  --c-border: #1e293b;
+  --c-border-subtle: #273549;
 
   /* Badges & Status */
-  --c-success-light: #059669;
-  --c-success-dark: #10b981;
-  --c-success: light-dark(var(--c-success-light), var(--c-success-dark));
-
-  --c-warning-light: #d97706;
-  --c-warning-dark: #f59e0b;
-  --c-warning: light-dark(var(--c-warning-light), var(--c-warning-dark));
-
-  --c-indigo-light: #4f46e5;
-  --c-indigo-dark: #818cf8;
-  --c-indigo: light-dark(var(--c-indigo-light), var(--c-indigo-dark));
+  --c-success: #10b981;
+  --c-warning: #f59e0b;
+  --c-indigo: #818cf8;
 
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -331,68 +283,6 @@ button {
   background-color: var(--c-surface-hover);
   color: var(--c-brand);
   transform: translateY(-1px);
-}
-
-/* Theme Toggle Button */
-.theme-toggle-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--c-border);
-  background-color: var(--c-surface);
-  color: var(--c-text-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-}
-
-.theme-toggle-btn:hover {
-  border-color: var(--c-brand);
-  background-color: var(--c-surface-hover);
-  color: var(--c-brand);
-}
-
-.theme-icon {
-  display: inline-flex;
-}
-
-/* Light/Dark Toggle Icon Visibility */
-:root .light-icon {
-  display: none;
-}
-:root .dark-icon {
-  display: inline-flex;
-}
-
-:root:has(> head > meta[name="color-scheme"][content="dark"]) .light-icon {
-  display: inline-flex;
-}
-:root:has(> head > meta[name="color-scheme"][content="dark"]) .dark-icon {
-  display: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not(:has(> head > meta[name="color-scheme"][content="light"])) .light-icon {
-    display: inline-flex;
-  }
-  :root:not(:has(> head > meta[name="color-scheme"][content="light"])) .dark-icon {
-    display: none;
-  }
-}
-
-/* Mobile Menu Button */
-.mobile-menu-btn {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  width: 38px;
-  height: 38px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--c-border);
-  background-color: var(--c-surface);
-  padding: 8px;
 }
 
 .hamburger-line {
@@ -1214,7 +1104,7 @@ button {
 }
 
 .project-details li::before {
-  content: '▹';
+  content: 'â–¹';
   position: absolute;
   left: 0;
   color: var(--c-brand);

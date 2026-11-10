@@ -1,11 +1,10 @@
-/**
+﻿/**
  * Yash Santosh Prasad - Portfolio JavaScript
  * Mechatronics & Robotics Engineering Portfolio
  * Background: Engineering / Autonomous Systems / Robotics themed canvas
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initThemeSystem();
   initEngineeringBackground();
   initStatsCounter();
   initIPFilter();
@@ -15,62 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initScrollTop();
 });
-
-/* --------------------------------------------------------------------------
-   1. Theme Management (Modern Web Guidance Compliant)
-   -------------------------------------------------------------------------- */
-let triggerCanvasColorUpdate = () => {};
-
-function initThemeSystem() {
-  const toggleBtn = document.getElementById('theme-toggle');
-  const metaColorScheme = document.querySelector('meta[name="color-scheme"]');
-  const mediaDark = window.matchMedia('(prefers-color-scheme: dark)');
-
-  if (!toggleBtn || !metaColorScheme) return;
-
-  function getCurrentTheme() {
-    const stored = localStorage.getItem('color-scheme');
-    if (stored === 'light' || stored === 'dark') return stored;
-    return mediaDark.matches ? 'dark' : 'light';
-  }
-
-  function updateAriaState() {
-    const current = getCurrentTheme();
-    toggleBtn.setAttribute('aria-label', `Switch to ${current === 'dark' ? 'light' : 'dark'} theme`);
-    toggleBtn.setAttribute('title', `Switch to ${current === 'dark' ? 'light' : 'dark'} theme`);
-  }
-
-  toggleBtn.addEventListener('click', () => {
-    const current = getCurrentTheme();
-    const target = current === 'dark' ? 'light' : 'dark';
-    const systemPref = mediaDark.matches ? 'dark' : 'light';
-
-    if (target === systemPref) {
-      localStorage.removeItem('color-scheme');
-      metaColorScheme.content = 'light dark';
-    } else {
-      localStorage.setItem('color-scheme', target);
-      metaColorScheme.content = target;
-    }
-    updateAriaState();
-    triggerCanvasColorUpdate();
-  });
-
-  window.addEventListener('storage', (e) => {
-    if (e.key === 'color-scheme') {
-      metaColorScheme.content = e.newValue ?? 'light dark';
-      updateAriaState();
-      triggerCanvasColorUpdate();
-    }
-  });
-
-  mediaDark.addEventListener('change', () => {
-    updateAriaState();
-    triggerCanvasColorUpdate();
-  });
-
-  updateAriaState();
-}
 
 /* --------------------------------------------------------------------------
    2. Engineering-Themed Animated Background Canvas
@@ -96,8 +39,8 @@ function initEngineeringBackground() {
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
   }
 
-  triggerCanvasColorUpdate = () => { isDark = getIsDark(); };
-  isDark = getIsDark();
+  triggerCanvasColorUpdate = () => { isDark = true; };
+  isDark = true;
 
   window.addEventListener('resize', () => {
     W = canvas.width = window.innerWidth;
@@ -541,8 +484,8 @@ function initEngineeringBackground() {
   /* ================================================================
      G) FLOATING ENGINEERING SYMBOLS / LABELS
      ================================================================ */
-  const SYMBOLS = ['Σ', 'ω', 'θ', 'λ', 'π', 'Δ', '∫', 'α', 'β', '∇',
-                   'PID', 'ROS', 'IMU', '⚙', '⚡', 'AI', 'RL', '5G'];
+  const SYMBOLS = ['Î£', 'Ï‰', 'Î¸', 'Î»', 'Ï€', 'Î”', 'âˆ«', 'Î±', 'Î²', 'âˆ‡',
+                   'PID', 'ROS', 'IMU', 'âš™', 'âš¡', 'AI', 'RL', '5G'];
   let floatSymbols = [];
 
   function buildFloatSymbols() {
@@ -591,7 +534,7 @@ function initEngineeringBackground() {
 
   function animate() {
     tick++;
-    isDark = getIsDark();
+    isDark = true;
 
     ctx.clearRect(0, 0, W, H);
 
@@ -770,7 +713,7 @@ function initMobileNav() {
 }
 
 /* --------------------------------------------------------------------------
-   7. Resume Modal (Native <dialog> — fixed & working)
+   7. Resume Modal (Native <dialog> â€” fixed & working)
    -------------------------------------------------------------------------- */
 function initResumeModal() {
   const modal = document.getElementById('resume-modal');
