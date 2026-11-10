@@ -1104,7 +1104,7 @@ button {
 }
 
 .project-details li::before {
-  content: 'â–¹';
+  content: '\2022';
   position: absolute;
   left: 0;
   color: var(--c-brand);

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Yash Santosh Prasad - Portfolio JavaScript
  * Mechatronics & Robotics Engineering Portfolio
  * Background: Engineering / Autonomous Systems / Robotics themed canvas
@@ -484,8 +484,8 @@ function initEngineeringBackground() {
   /* ================================================================
      G) FLOATING ENGINEERING SYMBOLS / LABELS
      ================================================================ */
-  const SYMBOLS = ['Î£', 'Ï‰', 'Î¸', 'Î»', 'Ï€', 'Î”', 'âˆ«', 'Î±', 'Î²', 'âˆ‡',
-                   'PID', 'ROS', 'IMU', 'âš™', 'âš¡', 'AI', 'RL', '5G'];
+  const SYMBOLS = ['PID', 'ROS', 'IMU', 'CAD', 'PLC', 'AI', 'RL', '5G', 'PWM', 'CAN', 'I2C', 'SPI'];
+
   let floatSymbols = [];
 
   function buildFloatSymbols() {
@@ -713,7 +713,7 @@ function initMobileNav() {
 }
 
 /* --------------------------------------------------------------------------
-   7. Resume Modal (Native <dialog> â€” fixed & working)
+   7. Resume Modal (Native <dialog> - fixed & working)
    -------------------------------------------------------------------------- */
 function initResumeModal() {
   const modal = document.getElementById('resume-modal');
